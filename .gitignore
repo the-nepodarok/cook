@@ -106,3 +106,6 @@ dist
 event-bg.png
 /.eslintrc.json
 *.rar
+/resource/musquito/
+/.idea
+*.patch

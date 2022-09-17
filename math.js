@@ -1,4 +1,5 @@
-const randomize = (start, end, dotIndex) => {
+
+const randomize = (start, end, dotIndex = 0) => {
 
   if (start < 0 || end < 0) {
     return 'Отрицательное число!';
