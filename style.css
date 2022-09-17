@@ -1,4 +1,4 @@
-    /* Global */
+/* Global */
 
 @font-face {
     font-family: 'helvari-Medium-Italic';
@@ -15,7 +15,7 @@
 }
 
 @font-face {
-    font-family: "CCColleenDoran-Italic"; /* this is the font for aside menu ui */
+    font-family: "ColleenDoran-Italic"; /* this is the font for aside menu ui */
     src: url("resource/fonts/ColleenDoran.woff2") format("woff2")/*,
          url("//db.onlinewebfonts.com/t/1923d78b2f7589f4b632bed235033497.woff2") format("woff2"),
          url("//db.onlinewebfonts.com/t/1923d78b2f7589f4b632bed235033497.woff") format("woff")*/;
@@ -40,7 +40,7 @@ ul, ol {
     display: none;
 }
 
-    /* HS */
+/* HS */
 
 #hot-stations {
     display: flex;
@@ -57,12 +57,12 @@ ul, ol {
     color: transparent;
     background: url("resource/ui/hs.png") no-repeat;
     text-shadow:
-                10px -2px 1px #3b3b3b,
-                11px -2px 1px white;
+            10px -2px 1px #3b3b3b,
+            11px -2px 1px white;
     position: relative;
 }
 
-    /* HS Dishes */
+/* HS Dishes */
 
 .hs-dish {
     position: absolute;
@@ -88,7 +88,7 @@ ul, ol {
     text-shadow: none;
 }
 
-    /* Order Trays */
+/* Order Trays */
 
 main section:first-of-type {
     margin-top: 50px;
@@ -134,7 +134,7 @@ main section:first-of-type {
     transform: scale(1.1) translateY(-2px);
 }
 
-    /* Cook Station */
+/* Cook Station */
 
 #main-ui {
     position: relative;
@@ -191,6 +191,8 @@ main section:first-of-type {
     justify-self: flex-start;
     position: relative;
     counter-increment: recipe-counter;
+    font-weight: 400;
+    color: ghostwhite;
 }
 
 .recipe li::before {
@@ -217,9 +219,23 @@ main section:first-of-type {
     background-color: blueviolet;
 }
 
+#side-ui {
+    width: 356px;
+    height: 377px;
+    position: absolute;
+    right: -21.8vw;
+    bottom: 5vh;
+    background-image: url("resource/ui/side-interface.png");
+}
+
+#side-ui .ingredients {
+    display: flex;
+    flex-direction: column;
+}
+
 /* Secondary Section */
 
-    /* Template Styles */
+/* Template Styles */
 
 .dish {
     content: "";
@@ -236,7 +252,18 @@ main section:first-of-type {
     animation-fill-mode: forwards;
 }
 
-    /* Customers */
+/* Bar */
+
+.bar--table {
+    position: absolute;
+    min-width: 100vw;
+    height: 50px;
+    background: url("resource/bar.jpg") no-repeat;
+    z-index: 5;
+}
+
+
+/* Customers */
 
 #client-base {
     position: relative;
@@ -244,12 +271,14 @@ main section:first-of-type {
     list-style: none;
     padding: 0;
     margin: 0;
+    height: 268px;
     /*left: -700px;*/
 }
 
 .customer-column {
     display: flex;
     min-width: 200px;
+    z-index: -2;
 }
 
 .customer {
@@ -257,25 +286,30 @@ main section:first-of-type {
     height: 385px;
     position: relative;
     bottom: 116px;
-    z-index: -2;
     background-repeat: no-repeat;
 }
 
 .customer-spawn {
-    left: -402px;
-    animation-name: appear;
-    animation-duration: 0.7s;
-    animation-timing-function: cubic-bezier(0.1, 0.3, 0.9, 0.5);
+    animation-name: up-down;
+    animation-duration: 1.8s;
+    animation-timing-function: cubic-bezier(.56,.52,.83,.98);
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
-.customer-leave {
+
+.customer-column > .customer-leave {
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 3s;
+    position: relative;
+    animation: leave-up;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(.56,.52,.83,.98);
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
-    /* Visitors */
+/* Visitors */
 
 .gp-visitor_sitting {
     position: absolute;
@@ -292,7 +326,7 @@ main section:first-of-type {
     bottom: 23.5%;
 }
 
-    /* Hovers */
+/* Hovers */
 
 .hot-station:hover {
     background-image: url("resource/ui/hs-select.png");
@@ -308,7 +342,7 @@ main section:first-of-type {
     background-image: url("resource/ui/order-tray-selected.png");
 }
 
-    /* Animations */
+/* Animations */
 
 @keyframes appear {
     from {left: -402px;}
@@ -318,4 +352,28 @@ main section:first-of-type {
 @keyframes side-appear {
     from {top: -32px;}
     to {top: 20px;}
+}
+/*
+@keyframes leave-up {
+    from {left: 700px}
+    35% {top: -116px;}
+    37% {top: -125px;}
+    39% {top: -120px;}
+    to {left: 800px;}
+} */
+
+@keyframes up-down {
+    from {left: -1052px; top: -116px;}
+    25% {top: -106px;}
+    47% {top: -116px;}
+    79% {top: -110px;}
+    to {left: 20px; top: -116px;}
+}
+
+@keyframes leave-up {
+    from {left: 20px; top: -116px;}
+    35% {top: -106px;}
+    47% {top: -116px;}
+    79% {top: -110px;}
+    to {left: 700px; top: -116px;}
 }

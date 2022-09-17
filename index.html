@@ -5,8 +5,6 @@
     <title>Cook!</title>
     <link rel="stylesheet" href="style.css">
     <script src="myQuery.js"></script>
-    <link rel="preload" as="font" href="https://use.typekit.net/pvy0ebr.css">
-    <link href="//db.onlinewebfonts.com/c/1923d78b2f7589f4b632bed235033497?family=CCColleenDoran-Italic" rel="preload" as="font">
 </head>
 <body>
 <header>
@@ -37,6 +35,9 @@
             <div class="cook-station-ui">
                 <ol class="recipe"></ol>
             </div>
+            <div class="side-ui" id="side-ui">
+                <ol class="ingredients"></ol>
+            </div>
         </div>
         <div id="oven"></div>
         <aside id="sidebar"></aside>
@@ -52,6 +53,7 @@
             <li class ="customer-column" data-status="empty"></li>
             <li class ="customer-column" data-status="empty"></li>
         </ul>
+        <div class="bar--table"></div>
     </section>
 </footer>
 

@@ -6,13 +6,27 @@ const Dishes = [
         name: 'Okra',
         origin: 'Japan',
         image: 'url("resource/main-dish/okra.png")',
-        recipe: ['Okra', 'Two Okras', 'No Okra'],
+        recipe: ['Okra', 'Two Okras'],
     },
     {
-        name: 'Okra',
+        name: 'Agedashi',
         origin: 'Japan',
-        image: 'url("resource/main-dish/okra.png")',
-        recipe: ['Two Okras'],
+        image: `url('resource/main-dish/okra.png')`,
+        recipe: ['Oil', 'Tofu'],
+        cookPic: `url('resource/cook/fry-pan.png')`,
+        ingredients: [
+            {
+                name: 'Oil',
+                icon: `url('resource/ui/ingredients/${name}.png')`,
+                key: 'O',
+                cookPic: `url('resource/cook/fry-pan.png')`
+            }, {
+                name: 'Tofu',
+                icon: `url('resource/ui/ingredients/${name}.png')`,
+                key: 'T',
+                cookPic: `url('resource/cook/agedashi/tofu.png')`
+            }
+        ]
     },
     {
         name: 'Okra',
@@ -41,12 +55,12 @@ let busyStatus = 'free';
 const createOrder = (TRAYS, dish) => {
     const ORDER = document.$('#order-template').content.cloneNode(true);
     ORDER.$('div.dish').style.backgroundImage = dish.image;
-    TRAYS.recipe.push(dish.recipe);
 
     const emptyTrays = [];
     TRAYS.forEach((tray) => {
         if (tray.dataset.status === 'empty') {
             emptyTrays.push(tray);
+            tray.details = dish;
         }
     });
 
@@ -76,7 +90,7 @@ const callOrders = (tray) => {
 
     if (busyStatus === 'free') {
         setTimeout(() => {
-                createOrder(TRAYS, Dishes[randomize(0, Dishes.length - 1)]);
+                createOrder(TRAYS, Dishes[1]/*Dishes[randomize(0, Dishes.length - 1)]*/);
             },
             randomize(100, 200));
     }
