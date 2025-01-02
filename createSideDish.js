@@ -6,7 +6,7 @@ const sideDishes = [
     {
         name: 'Soup',
         origin: 'Russia',
-        image: 'url("resource/side-dish/soup.png")',
+        image: 'url("resource/side-dishes/soup.png")',
         quantity: 9,
     },
 ];

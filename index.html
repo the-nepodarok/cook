@@ -1,86 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cook!</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="myQuery.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cook!</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="myQuery.js"></script>
 </head>
+
 <body>
-<header>
-    <section>
-        <ol id="hot-stations">
-            <li id="hs-1" class="hot-station" data-status="empty"><span><sub>HS</sub>1</span></li>
-            <li id="hs-2" class="hot-station" data-status="empty"><span><sub>HS</sub>2</span></li>
-            <li id="hs-3" class="hot-station" data-status="empty"><span><sub>HS</sub>3</span></li>
-            <li id="hs-4" class="hot-station" data-status="empty"><span><sub>HS</sub>4</span></li>
-            <li id="hs-5" class="hot-station" data-status="empty"><span><sub>HS</sub>5</span></li>
-            <li id="hs-6" class="hot-station" data-status="empty"><span><sub>HS</sub>6</span></li>
-        </ol>
-    </section>
-</header>
-<main>
-    <section id="main-section">
-        <ol id="orders">
-            <li id="order-1" class="tray idle">1<div class="order-tray" data-status="empty"></div></li>
-            <li id="order-2" class="tray idle">2<div class="order-tray" data-status="empty"></div></li>
-            <li id="order-3" class="tray idle">3<div class="order-tray" data-status="empty"></div></li>
-            <li id="order-4" class="tray idle">4<div class="order-tray" data-status="empty"></div></li>
-            <li id="order-5" class="tray idle">5<div class="order-tray" data-status="empty"></div></li>
-            <li id="order-6" class="tray idle">6<div class="order-tray" data-status="empty"></div></li>
-        </ol>
-    </section>
-    <section id="main-ui">
-        <div id="cook-station">
-            <div class="cook-station-ui">
-                <ol class="recipe"></ol>
+    <header>
+        <section>
+            <ol id="hot-stations">
+                <li id="hs-1" class="hot-station" data-status="empty"><span><sub>HS</sub>1</span></li>
+                <li id="hs-2" class="hot-station" data-status="empty"><span><sub>HS</sub>2</span></li>
+                <li id="hs-3" class="hot-station" data-status="empty"><span><sub>HS</sub>3</span></li>
+                <li id="hs-4" class="hot-station" data-status="empty"><span><sub>HS</sub>4</span></li>
+                <li id="hs-5" class="hot-station" data-status="empty"><span><sub>HS</sub>5</span></li>
+                <li id="hs-6" class="hot-station" data-status="empty"><span><sub>HS</sub>6</span></li>
+            </ol>
+        </section>
+    </header>
+    <main>
+        <section id="main-section">
+            <ol id="orders">
+                <li id="order-1" class="tray idle">1
+                    <div class="order-tray" data-status="empty"></div>
+                </li>
+                <li id="order-2" class="tray idle">2
+                    <div class="order-tray" data-status="empty"></div>
+                </li>
+                <li id="order-3" class="tray idle">3
+                    <div class="order-tray" data-status="empty"></div>
+                </li>
+                <li id="order-4" class="tray idle">4
+                    <div class="order-tray" data-status="empty"></div>
+                </li>
+                <li id="order-5" class="tray idle">5
+                    <div class="order-tray" data-status="empty"></div>
+                </li>
+                <li id="order-6" class="tray idle">6
+                    <div class="order-tray" data-status="empty"></div>
+                </li>
+            </ol>
+        </section>
+        <section id="main-ui">
+            <div id="cook-station">
+                <div class="cook-station-ui">
+                    <ol class="recipe"></ol>
+                </div>
+                <div class="side-ui" id="side-ui">
+                    <ol class="ingredients"></ol>
+                </div>
             </div>
-            <div class="side-ui" id="side-ui">
-                <ol class="ingredients"></ol>
-            </div>
-        </div>
-        <div id="oven"></div>
-        <aside id="sidebar"></aside>
-    </section>
-</main>
-<footer>
-    <section id="bar">
-        <ul id="client-base">
-            <li class ="customer-column" data-status="empty"></li>
-            <li class ="customer-column" data-status="empty"></li>
-            <li class ="customer-column" data-status="empty"></li>
-            <li class ="customer-column" data-status="empty"></li>
-            <li class ="customer-column" data-status="empty"></li>
-            <li class ="customer-column" data-status="empty"></li>
-        </ul>
-        <div class="bar--table"></div>
-    </section>
-</footer>
+            <div id="oven"></div>
+            <aside id="sidebar"></aside>
+        </section>
+    </main>
+    <footer>
+        <section id="bar">
+            <ul id="client-base">
+                <li class="customer-column" data-status="empty"></li>
+                <li class="customer-column" data-status="empty"></li>
+                <li class="customer-column" data-status="empty"></li>
+                <li class="customer-column" data-status="empty"></li>
+                <li class="customer-column" data-status="empty"></li>
+                <li class="customer-column" data-status="empty"></li>
+            </ul>
+            <div class="bar--table"></div>
+        </section>
+    </footer>
 
-<div class="gp-visitor_sitting sitting-visitor_1">
-    <img src="resource/humans/gp-visitor-sitting.png" width="189" height="442" alt="GP-visitor with a phone">
-</div>
-<div class="gp-visitor_sitting sitting-visitor_2">
-    <img src="resource/humans/gp-visitor-sitting.png" width="189" height="442" alt="GP-visitor with a phone">
-</div>
-
-<template id="order-template">
-    <div class="dish"></div>
-</template>
-
-<template id="hs-template">
-    <div class="hs-dish">
-        <span class="hs-counter"></span>
-        <span class="hs-diagram"></span>
+    <div class="gp-visitor_sitting sitting-visitor_1">
+        <img src="resource/humans/gp-visitor-sitting.png" width="189" height="442" alt="GP-visitor with a phone">
     </div>
-</template>
+    <div class="gp-visitor_sitting sitting-visitor_2">
+        <img src="resource/humans/gp-visitor-sitting.png" width="189" height="442" alt="GP-visitor with a phone">
+    </div>
 
-<audio class="order-bell-audio invisible">
-    <source src="resource/audio/bell.mp3" type="audio/mpeg">
-<!--    <source src="bell.ogg" type="audio/ogg">-->
-</audio>
+    <template id="order-template">
+        <div class="dish"></div>
+    </template>
 
-<script type="module" src="main.js"></script>
-<!--<script src="resource/musquito/dist/musquito.min.js"></script>-->
+    <template id="hs-template">
+        <div class="hs-dish">
+            <span class="hs-counter"></span>
+            <span class="hs-diagram"></span>
+        </div>
+    </template>
+
+    <audio class="order-bell-audio invisible">
+        <source src="resource/audio/bell.mp3" type="audio/mpeg">
+        <!--    <source src="bell.ogg" type="audio/ogg">-->
+    </audio>
+
+    <script type="module" src="main.js"></script>
+    <!--<script src="resource/musquito/dist/musquito.min.js"></script>-->
 </body>
 </html>

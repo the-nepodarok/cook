@@ -39,7 +39,7 @@ const cookMenuHandler = (evt) => {
         const activeTray = document.$('.active');
         activeTray.dispatchEvent(cookFinished);
     }
-}
+};
 
 const cookFinishedHandler = (target) => {
     giveOrder(target);
@@ -81,6 +81,7 @@ const giveOrder = (target) => {
 }
 
 document.addEventListener('keypress', (evt) => {
+    evt.preventDefault();
     if (document.$('#cook-station').dataset.status !== 'busy'
         && evt.key > 0
         && evt.key <= TRAY_COUNT) {
@@ -97,7 +98,7 @@ document.addEventListener('keypress', (evt) => {
             }
         }
     }
-})
+});
 
 orderTrays.forEach((tray) => {
     tray.addEventListener('finished', cookFinishedHandler);
